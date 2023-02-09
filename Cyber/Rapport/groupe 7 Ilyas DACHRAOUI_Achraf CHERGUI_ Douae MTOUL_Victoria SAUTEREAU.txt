@@ -1,0 +1,25 @@
+# Alphabet
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+# Clé de décalage
+key = int(input("Entrez la clé de décalage : "))
+
+# Message à crypter
+message = input("Entrez le message à chiffrer : ")
+
+
+# Initialiser un message crypté vide
+encrypted_message = ""
+
+# Boucle pour crypter chaque caractère
+for char in message:
+  # Trouver l'index du caractère dans l'alphabet
+  char_index = alphabet.index(char.upper())
+  # Décaler l'index avec la clé
+  new_index = (char_index + key) % 26
+  # Ajouter le nouveau caractère encrypté au message crypté
+  encrypted_message += alphabet[new_index]
+
+# Afficher le message crypté
+print("Message crypté :", encrypted_message)
